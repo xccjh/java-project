@@ -1,0 +1,508 @@
+/*layout部分*/
+.container{
+    min-width: 980px;
+}
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 32px;
+    background: #fff;
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid #dce1e5;
+    z-index: 99;
+}
+.header-tit{
+    font-size: 26px;
+    color: #36baff;
+    font-weight: normal;
+    text-indent: 110px;
+}
+.header-user{
+    margin-right: 50px;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.hearder-club-list{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.join-club-btn{
+    margin-top: 10px;
+}
+.main{
+    width: 100%;
+}
+.main-content{
+    margin-top: 60px;
+}
+.main-nav{
+    position: fixed;
+    z-index: 99;
+    top: 61px;
+    bottom: 0;
+    left: 0;
+    width: 90px;
+    padding: 20px 0;
+    background: #e7ecf0;
+    overflow: hidden;
+}
+.main-nav-list{
+    padding-top: 5px;
+    height: 65px;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+}
+.main-nav-cur{
+    background: #36baff;
+    color: #fff;
+}
+
+.main-nav-list a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.nav-link:before{
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 36px;
+    height: 36px;
+    background: url(../images/nav-icons.png) no-repeat;
+}
+.nav-index:before{
+    background-position: 0 -180px;
+}
+.main-nav-cur .nav-index:before{
+    background-position: 0 -144px;
+}
+.nav-members:before{
+    background-position: 0 -36px;
+}
+.main-nav-cur .nav-members:before{
+    background-position: 0 0px;
+}
+.nav-supplies:before{
+    background-position: 0 -396px;
+}
+.main-nav-cur .nav-supplies:before{
+    background-position: 0 -360px;
+}
+.nav-message:before{
+    background-position: 0 -252px;
+}
+.main-nav-cur .nav-message:before{
+    background-position: 0 -216px;
+}
+.main-content{
+    margin-left: 90px;
+}
+
+/*首页部分*/
+.home-header{
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: url(../images/club-header-bg.png) no-repeat center center;
+    text-align: center;
+    color: #fff;
+}
+.home-club-name{
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 86px;
+    border: 3px solid #43b2fe;
+    border-radius: 4px;
+    padding: 3px 10px;
+}
+.home-club-desc{
+    display: block;
+    width: 430px;
+    margin: 15px auto;
+    font-size: 14px;
+}
+.home-main{
+    position: relative;
+    padding: 0 20px 0;
+    background: linear-gradient(#1852a8,#cce9f9);
+    min-height: 400px;
+}
+.main-panel{
+    position: absolute;
+    width: 100%;
+    padding-right: 40px;
+    box-sizing:border-box;
+}
+.main-panel-meeting{
+    display: none;
+}
+.main-panel-activity{
+    display: none;
+}
+.home-main-nav{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    text-align: center;
+}
+.home-main-nav-list{
+    display: inline-block;
+    color: #999;
+    font-size: 14px;
+    width: 200px;
+    cursor: pointer;
+}
+.home-main-nav-list a{
+    display: inline-block;
+    width: 100%;
+}
+.home-main-nav-list.cur{
+    color: #36baff;
+    font-weight: bold;
+}
+.home-club-label{
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+.home-club-tit{
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 1px solid #d0dde5;
+    margin: 0 20px;
+    color: #333333;
+    font-size: 18px;
+    position: relative;
+}
+.home-club-tit a{
+    font-size: 12px;
+    color: #36baff;
+}
+.home-club-tit:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    top: 50%;
+    left: -20px;
+    margin-top: -10px;
+    background: #36baff;
+}
+.home-club-content{
+    padding: 20px;
+    overflow: hidden;
+}
+.label-big{
+    width: 95%;
+}
+.label-small{
+    width: 100%;
+}
+.panel-left{
+    width: 68%;
+}
+.panel-right{
+    width: 32%;
+}
+.home-club-members,.home-club-member{
+    display: inline-block;
+    margin-right: 10px;
+}
+.home-club-message{
+    display: block;
+    border-bottom: 1px dotted #ccc;
+    padding: 5px 0;
+}
+.home-club-message-user{
+    color: #777;
+    font-size: 12px;
+}
+.home-club-message-text{
+    word-wrap: break-word;
+}
+/*社团列表页*/
+.index-tit{
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.index-club-box{
+    float: left;
+    margin-right: 20px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 2px 3px 3px #777;
+}
+.index-club-box a:hover{
+    color: #36baff;
+}
+/*会议记录*/
+.metting-container{
+    margin-top: 20px;
+    background: #fff;
+    padding:20px;
+}
+/*社团成员*/
+.default-container{
+    background: #cce9f9;
+    height: 100%;
+}
+.default-box{
+    width: 90%;
+    min-height: 565px;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin: 20px auto; 
+    padding: 10px;
+    text-align: center;
+}
+.table-tit{
+    font-size: 18px;
+    color:#585858;
+    text-align: center;
+}
+.default-handle{
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    background: #f6fafc;
+    margin: 10px auto 0;
+    text-align: center;
+}
+.default-add-btn{
+    margin-right: 40px;
+}
+table{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    text-align: center;
+    border-collapse:collapse;
+    table-layout:fixed;
+}
+thead{
+    background: #fff;
+    height: 35px;
+    line-height: 35px;
+}
+tbody tr{
+    height: 70px;
+    cursor: pointer;
+}
+tbody tr:nth-of-type(odd){
+    background: #FBFAF6;
+}
+tbody tr:nth-of-type(even){
+    background: #fff;
+}
+tbody tr:hover{
+    background: #ffe8aa;
+}
+tbody td{
+    word-wrap:break-word;
+    padding: 2px;
+}
+.modify-ing .modify-btn{
+    background: #36baff;
+}
+.modify-ing td{
+    border:1px solid #ccc;
+    background: #f6fafc;
+    outline: 1px solid #ddd;
+    cursor: text;
+}
+/*添加表格项的悬浮框*/
+.table-add-box{
+    z-index: 999;
+    position: absolute;
+    width: 300px;
+    background: #fff;
+    box-shadow: 2px 2px 5px #888;
+    left: 50%;
+    top: 100px;
+    margin-left: -150px;
+    padding: 10px;
+    text-align: center;
+}
+.table-add-tit{
+    color: #36baff;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ccc;
+}
+.table-add-close{
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+.table-add-content{
+    margin-top: 10px;
+}
+.table-add-content label{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    width: 280px;
+    text-align: right;
+}
+.table-add-save-btn{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.mask{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #000;
+    opacity: 0.3;
+}
+/*留言板*/
+.message-handle{
+    height: auto;
+}
+.message-text{
+    display: block;
+    width: 400px;
+    height: 50px;
+    margin: 10px auto;
+    resize:none;
+}
+.message-box{
+    width: 90%;
+    margin: 20px auto;
+    text-align: left;
+}
+.message-list{
+    border-bottom: 1px solid #ccc;
+    margin-top: 5px;
+}
+.message-user{
+    font-size: 18px;
+    font-weight: bold;
+    color:#585858;
+}
+.message-time{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.message-floor{
+    float: right;
+    font-size: 14px;
+    color: #8797a0;
+}
+.message-content{
+    display: block;
+    font-size: 14px;
+    padding: 5px 0;
+}
+/*登录注册*/
+.form-group-tit{
+    text-align: center;
+    font-size: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.form-group{
+    width: 450px;
+    margin: 20px auto;
+}
+.form-group label{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    font-size: 18px;
+}
+.form-group input{
+    display: inline-block;
+    width: 170px;
+}
+.form-submit-btn{
+    display: block;
+    margin: 0 auto;
+}
+.form-required{
+    color: #f00;
+    margin-right: 5px;
+}
+/*会议记录*/
+.metting-container{
+    text-align: center;
+}
+.meeting-ul{
+    width: 600px;
+    margin: 20px auto;
+    border-top: 1px solid #ccc;
+}
+.meeting-list{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dotted #ccc;
+}
+.meeting-list:hover{
+    color: #36baff;
+}
+.meeting-list-url{
+    text-align: left;
+    width: 20em;
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+}
+.meeting-add-box{
+    margin-bottom: 30px;
+}
+.meeting-add-title{
+    height: 20px;
+    width: 390px;
+    padding: 0 5px;
+    line-height: 20px;
+}
+.meeting-add-label{
+    vertical-align:top;
+}
+.meeting-add-content{
+    resize:none;
+    height: 390px;
+    width: 390px;
+    overflow: auto;
+    font-size: 14px;
+    padding: 5px;
+}
+.meeting-per-title{
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 20px;
+}
+.meeting-per-info{
+    font-size: 12px;
+    color: #aaa;
+    margin-left: 100px;
+}
+.meeting-per-content{
+    text-align: justify;
+    width: 661px;
+    margin: 20px auto;
+    overflow-wrap: break-word;
+    border: 1px dotted #ccc;
+    padding: 15px;
+}

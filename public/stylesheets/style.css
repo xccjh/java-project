@@ -1,0 +1,83 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,p {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ background-color: transparent;
+ font-family: 微软雅黑;
+}
+ul,li{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    font-family: 微软雅黑;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide{
+    display: none;
+}
+.btn-success{
+    background: #66cc33;
+    color: #fff;
+    border-color: #66cc33;
+    border-radius: 3px;
+}
+.btn-warn{
+    background: #eb6565;
+    color: #fff;
+    border-color: #eb6565;
+    border-radius: 3px;
+}
+.btn-primary{
+    background: #36baff;
+    color: #fff;
+    border-radius: 3px;
+}
+.btn-m{
+    display: inline-block;
+    font-size: 16px;
+    padding:6px 10px;
+}
+.btn-s{
+    font-size: 14px;
+    display: inline-block;
+    padding:3px 5px;
+}
+.ml10{
+    margin-left: 10px;
+}
+.ml20{
+    margin-left: 20px;
+}

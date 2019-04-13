@@ -1,0 +1,54 @@
+<div class="default-container clearfix">
+    <div class="default-box">
+    <%if(authority.isMember){%>
+        <h2 class="table-tit">所有成员的通讯录</h2>
+        
+        <div class="default-handle">
+        <%if(authority.editMember){%>
+            <button class="btn-success default-add-btn btn-m" data-type="member">添加成员</button>
+            <button class="btn-warn default-del-btn btn-m">删除成员</button>
+        <%}%>
+        </div>
+        <table data-type="member" data-clubId="<%=locals.clubId%>">
+            <thead>
+                <tr>
+                    <%if(authority.editMember){%>
+                    <th><input type="checkbox" class="table-choose-all"></th>
+                    <%}%>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>职位</th>
+                    <th>学院</th>
+                    <th>年级</th>
+                    <th>电话</th>
+                    <th>QQ</th>
+                    <%if(authority.editMember){%>
+                    <th>操作</th>
+                    <%}%>
+                </tr>
+            </thead>
+            <tbody>
+            <%memberList.forEach(function(member,index){%>
+                <tr data-id="<%=member.id%>">
+                    <%if(authority.editMember){%>
+                    <td><input type="checkbox" class="table-choose"></td>
+                    <%}%>
+                    <td><%=member.attributes.name%></td>
+                    <td><%=member.attributes.department%></td>
+                    <td><%=member.attributes.position%></td>
+                    <td><%=member.attributes.college%></td>
+                    <td><%=member.attributes.grade%></td>
+                    <td><%=member.attributes.telNum%></td>
+                    <td><%=member.attributes.qqNum%></td>
+                    <%if(authority.editMember){%>
+                    <td><button class="btn-success btn-s modify-btn">编辑</button></td>
+                    <%}%>
+                </tr>
+            <%})%>
+            </tbody>
+        </table>
+    <%}else{%>
+        <tr>您没有权限查看，请登录，或登录后申请加入社团。</tr>
+    <%}%>
+    </div>
+</div>

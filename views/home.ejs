@@ -1,0 +1,70 @@
+<div class="home-header">
+    <div class="home-club-name"><%=clubInfo.attributes.clubName%></div><br/>
+    <%if(locals.user){%>
+        <%if(authority.isMember){%>
+        <span class="join-club-btn btn-success btn-s">已加入</span>
+        <%}else if(authority.isApplying){%>
+        <span class="join-club-btn btn-warn btn-s">正在审核加入请求</span>
+        <%}else{%>
+        <button class="join-club-btn btn-success btn-s" data-clubid="<%=clubInfo.attributes.clubId%>" id="join_club_btn">申请加入社团</button>
+        <%}%>
+    <%}%>
+    <div class="home-club-desc">简介：<%=clubInfo.attributes.description%></div>
+</div>
+<div class="home-main">
+    <ul class="home-main-nav">
+        <li class="home-main-nav-list cur"><a href="/clubId/<%=locals.clubId%>">社团主页</a></li>
+        <li class="home-main-nav-list"><a href="/clubId/<%=locals.clubId%>/meeting">会议记录</a></li>
+        <li class="home-main-nav-list"><a href="/clubId/<%=locals.clubId%>/activity">社团活动</a></li>
+    </ul>
+    <div class="clearfix">
+        <div class="panel-left fl">
+            <div class="home-club-label label-big">
+                <div class="home-club-tit">社团成员（<%-memberList.length%>人）</div>
+                <div class="home-club-content">
+                    <ul class="home-club-members">
+                        <%memberList.forEach(function(member,index){%>
+                            <li class="home-club-member"><%=member.attributes.name%></li>
+                        <%})%>
+                    </ul>
+                </div>
+            </div>
+            <div class="home-club-label label-big">
+                <div class="home-club-tit">社团活动</div>
+                <div class="home-club-content">
+                    <%if(activityList.length){%>
+                    <%activityList.forEach(function(activity,index){%>
+                        <div><%=activity.attributes.title%></div>
+                    <%})%>
+                    <%}else{%>
+                        <div>暂无</div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+        <div class="panel-right fr">
+            <div class="home-club-label label-small">
+                <div class="home-club-tit">社团资料</div>
+                <div class="home-club-content"><%=clubInfo.attributes.information%></div>
+            </div>
+            
+            <div class="home-club-label label-small">
+                <div class="home-club-tit">社团留言板 <a href="/clubId/<%=locals.clubId%>/message">更多 >></div>
+                <div class="home-club-content">
+                    <%if(messageList.length){%>
+                    <ul>
+                        <%messageList.forEach(function(message,index){%>
+                            <li class="home-club-message clearfix">
+                                <p class="home-club-message-text"><%=message.attributes.msgText%></p>
+                                <div class="fr home-club-message-user">—— <%=message.attributes.user%></div>
+                            </li>
+                        <%})%>
+                    </ul>
+                    <%}else{%>
+                        <div>暂无</div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

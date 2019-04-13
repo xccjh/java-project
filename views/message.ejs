@@ -1,0 +1,22 @@
+<div class="default-container clearfix">
+    <div class="default-box">
+        <h2 class="table-tit">留言板</h2>
+        <div class="default-handle message-handle">
+            <textarea class="message-text" data-clubId="<%=locals.clubId%>"></textarea>
+            <button class="btn-success btn-m message-send-btn">发布留言</button>
+        </div>
+        <div class="message-box" >
+            <ul class="message-ul" data-count="<%-messageList.length%>">
+                <%messageList.forEach(function(message,index){%>
+                    <li class="message-list">
+                        <span class="message-user"><%=message.attributes.user%></span>
+                        <span class="message-time"><%=formatTime(message.createdAt)%></span>
+                        <span class="message-floor"><%-(messageList.length-index)%> #</span>
+                        <span class="message-content"><%=message.attributes.msgText%></span>
+                    </li>
+                <%})%>
+
+            </ul>
+        </div>
+    </div>
+</div>

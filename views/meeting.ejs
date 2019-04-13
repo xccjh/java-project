@@ -1,0 +1,79 @@
+<div class="home-header">
+    <div class="home-club-name"><%=clubInfo.attributes.clubName%></div><br/>
+    <%if(locals.user){%>
+        <%if(authority.isMember){%>
+        <span class="join-club-btn btn-success btn-s">已加入</span>
+        <%}else if(authority.isApplying){%>
+        <span class="join-club-btn btn-warn btn-s">正在审核加入请求</span>
+        <%}else{%>
+        <button class="join-club-btn btn-success btn-s" data-clubid="<%=clubInfo.attributes.clubId%>" id="join_club_btn">申请加入社团</button>
+        <%}%>
+    <%}%>
+    <div class="home-club-desc">简介：<%=clubInfo.attributes.description%></div>
+</div>
+<div class="home-main">
+    <ul class="home-main-nav">
+        <li class="home-main-nav-list"><a href="/clubId/<%=locals.clubId%>">社团主页</a></li>
+        <li class="home-main-nav-list cur"><a href="/clubId/<%=locals.clubId%>/meeting">会议记录</a></li>
+        <li class="home-main-nav-list"><a href="/clubId/<%=locals.clubId%>/activity">社团活动</a></li>
+    </ul>
+    <div class="clearfix metting-container">
+    <%if(authority.isMember){%>
+        <%if(isSingle){%>
+            <div class="meeting-per-show" data-recordid="<%=result.id%>" data-type="meeting">
+                <%if(locals.user && locals.user.name==result.attributes.user){%>
+                <button class="btn-success btn-s ml20 meeting-modify-btn" >编辑</button>
+                <button class="btn-warn btn-s ml20 meeting-del-btn" >删除</button>
+                <%}%>
+                <a class="btn-primary btn-s ml20 meeting-return-url" href="/clubId/<%=locals.clubId%>/meeting">返回记录列表</a>
+                <h3 class="meeting-per-title"><%=result.attributes.title%></h3>
+                <span class="meeting-per-info">发布人：<%=result.attributes.user%></span>
+                <span class="meeting-per-info">最后编辑时间：<%=formatTime(result.updatedAt)%></span>
+                <pre class="meeting-per-content"><%=result.attributes.content%></pre>
+            </div>
+            <div class="meeting-modify-area hide" data-recordid="<%=result.id%>" data-type="meeting">
+                <div class="meeting-add-box">
+                    <label class="meeting-add-label">会议标题：<input type="text" class="meeting-add-title" value="<%=result.attributes.title%>"></label>
+                </div>
+                <div class="meeting-add-box">
+                    <label class="meeting-add-label">会议内容：</label>
+                    <textarea class="meeting-add-content"><%=result.attributes.content%></textarea>
+                </div>
+                <button class="btn-success btn-m meeting-save-btn" data-clubid=<%=locals.clubId%> >保存会议记录</button>
+                <button class="btn-primary btn-m ml20 meeting-modify-cancel" data-clubid=<%=locals.clubId%>>返回查看状态</button>
+            </div>
+        <%}else{%>
+            <div class="meeting-show">
+                <%if(authority.pubMeeting){%>
+                <button class="btn-success btn-m meeting-add-btn" >新增会议记录</button>
+                <%}%>
+                <ul class="meeting-ul">
+                    <%if(resultList.length==0){%>
+                    <li class="meeting-list">没有会议记录哦~</li>
+                    <%}else{%>
+                        <%resultList.forEach(function(meeting,index){%>
+                            <li class="meeting-list clearfix">
+                                <a href="/clubId/<%=locals.clubId%>/meeting/<%=meeting.id%>" class="meeting-list-url fl"><%=meeting.attributes.title%></a>
+                                <span class="meeting-list-time fr"><%=formatTime(meeting.updatedAt)%></span>
+                            </li>
+                        <%})%>
+                    <%}%>
+                </ul>
+            </div>
+            <div class="meeting-add-area hide">
+                <div class="meeting-add-box">
+                    <label class="meeting-add-label">会议标题：<input type="text" class="meeting-add-title"></label>
+                </div>
+                <div class="meeting-add-box">
+                    <label class="meeting-add-label">会议内容：</label>
+                    <textarea class="meeting-add-content"></textarea>
+                </div>
+                <button class="btn-success btn-m meeting-public-btn" data-clubid=<%=locals.clubId%> data-type="meeting">发布会议记录</button>
+                <a class="btn-primary btn-m ml20" href="/clubId/<%=locals.clubId%>/meeting">返回记录列表</a>
+            </div>
+        <%}%>
+    <%}else{%>
+        您没有权限查看，请登录，或登录后申请加入社团。
+    <%}%>
+    </div>
+</div>

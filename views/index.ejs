@@ -1,0 +1,13 @@
+<div class="home-header">
+    <h1 class="index-tit">欢迎来到社团管理系统！</h1>
+    <p>点击下方社团名字进入社团主页</p>
+</div>
+<div class="home-main clearfix">
+    <ul class="index-club-list clearfix">
+        <%clubList.forEach(function(club,index){%>
+        <li class="index-club-box">
+            <a href="/clubId/<%=club.attributes.clubId%>"><%=club.attributes.clubName%></a>
+        <%})%>
+        </li>
+    </ul>
+</div>

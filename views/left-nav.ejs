@@ -1,0 +1,20 @@
+<ul class="main-nav">
+    <%if(locals.clubId){%>
+    <li class="main-nav-list <% if(locals.tab==1){ %>main-nav-cur<%}%>">
+        <a href="/clubId/<%=locals.clubId%>" class="nav-link nav-index">首页</a>
+    </li>
+    <li class="main-nav-list <% if(locals.tab==2){ %>main-nav-cur<%}%>">
+        <a href="/clubId/<%=locals.clubId%>/members" class="nav-link nav-members">通讯录</a>
+    </li>
+    <li class="main-nav-list <% if(locals.tab==3){ %>main-nav-cur<%}%>">
+        <a href="/clubId/<%=locals.clubId%>/supplies" class="nav-link nav-supplies">物资管理</a>
+    </li>
+    <li class="main-nav-list <% if(locals.tab==4){ %>main-nav-cur<%}%>">
+        <a href="/clubId/<%=locals.clubId%>/message" class="nav-link nav-message">留言板</a>
+    </li>
+    <%}else{%>
+        <li class="main-nav-list <% if(locals.tab==1){ %>main-nav-cur<%}%>">
+            <a href="/" class="nav-link nav-index">社团列表</a>
+        <li>
+    <%}%>
+</ul>

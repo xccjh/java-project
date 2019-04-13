@@ -1,0 +1,51 @@
+<div class="default-container clearfix">
+    <div class="default-box">
+    <%if(authority.isMember){%>
+        <h2 class="table-tit">物资管理</h2>
+        <div class="default-handle">
+        <%if(authority.editSupplies){%>
+            <button class="btn-success default-add-btn btn-m" data-type="supplies">添加物资</button>
+            <button class="btn-warn default-del-btn btn-m">删除物资</button>
+        <%}%>
+        </div>
+        <table data-type="supplies" data-clubId="<%=locals.clubId%>">
+            <thead>
+                <tr>
+                    <%if(authority.editSupplies){%>
+                    <th><input type="checkbox" class="table-choose-all"></th>
+                    <%}%>
+                    <th>物品名称</th>
+                    <th>数量</th>
+                    <th>所在地点</th>
+                    <th>负责人</th>
+                    <th>负责人电话</th>
+                    <th>备注</th>
+                    <%if(authority.editSupplies){%>
+                    <th>操作</th>
+                    <%}%>
+                </tr>
+            </thead>
+            <tbody>
+                <%suppliesList.forEach(function(supplies,index){%>
+                    <tr data-id="<%=supplies.id%>">
+                        <%if(authority.editSupplies){%>
+                        <td><input type="checkbox" class="table-choose"></td>
+                        <%}%>
+                        <td><%=supplies.attributes.name%></td>
+                        <td><%=supplies.attributes.amount%></td>
+                        <td><%=supplies.attributes.position%></td>
+                        <td><%=supplies.attributes.person%></td>
+                        <td><%=supplies.attributes.telNum%></td>
+                        <td><%=supplies.attributes.note%></td>
+                        <%if(authority.editSupplies){%>
+                        <td><button class="btn-success btn-s modify-btn">编辑</button></td>
+                        <%}%>
+                    </tr>
+                <%})%>
+            </tbody>
+        </table>
+    <%}else{%>
+        <tr>您没有权限查看，请登录，或登录后申请加入社团。</tr>
+    <%}%>
+    </div>
+</div>
